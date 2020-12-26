@@ -25,7 +25,9 @@
 *.la
 *.a
 *.lib
-
+cmake-build-debug/
+*.iml
+.idea/
 # Executables
 *.exe
 *.out

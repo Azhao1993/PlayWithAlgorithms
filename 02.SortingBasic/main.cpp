@@ -4,34 +4,9 @@
 
 #include <vector>
 #include <ostream>
-#include "Student.h"
+#include "01.SelectionSort/Student.h"
 #include "SortTestHelper.h"
 
-void SelectionSort(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        int minIndex = i;
-        for (int j = i + 1; j < n; j++) {
-            if(arr[j] < arr[minIndex]) {
-                minIndex = j;
-            }
-        }
-        std::swap(arr[i], arr[minIndex]);
-    }
-}
-
-// 选择排序模板方法
-template<typename T>
-void SelectionSort(std::vector <T> &arr, int n) {
-    for (int i = 0; i < n; i++) {
-        int minIndex = i;
-        for (int j = i + 1; j < n ; j++) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j; // [i, n) 区间里的最小值
-            }
-        }
-        std::swap(arr[i], arr[minIndex]);
-    }
-}
 
 int main()
 {
@@ -59,5 +34,15 @@ int main()
     SortTestHelper::TestSort("Selection Sort", SelectionSort, e, n);
 
     delete[] e; // GenerateRandomArray中 使用new int[];
+
+
+    //测试插入排序，并与选择排序比较
+    int n = 10000;
+    int* f1 = SortTestHelper::GenerateRandomArray(n, 0, n);
+    int* f2 = SortTestHelper::CopyIntArray(f1, n);
+
+    delete[] f1;
+    delete[] f2;
+
     return 0;
 }

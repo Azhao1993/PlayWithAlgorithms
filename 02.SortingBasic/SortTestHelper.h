@@ -77,6 +77,13 @@ namespace SortTestHelper{
         std::cout << sortName << ":" << double (end - start) / CLOCKS_PER_SEC << "s" << std::endl;
     }
 
+    //Copy 整型数组
+    int * CopyIntArray(int arr[], int n) {
+        int *arr = new int[n];
+        copy(a, a + n, arr);
+        return arr;
+    }
+
 }
 
 

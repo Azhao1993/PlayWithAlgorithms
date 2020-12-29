@@ -6,9 +6,10 @@
 #define PLAYWITHALGORITHMS_INSERTIONSORT_H
 #include <vector>
 
+
+
 template<typename T>
-void InsertionSort(T arr[], int n)
-{
+void InsertionSort(T arr[], int n) {
     /*
     // 写法1
     for (int i = 1; i < n; i++) {
@@ -20,6 +21,8 @@ void InsertionSort(T arr[], int n)
             }
         }
     }
+    */
+
     // 写法2
     for (int i = 0; i < n; i++) {
         for (int j = i; j > 0 && arr[j] < arr[j - 1]; j--) {
@@ -28,8 +31,13 @@ void InsertionSort(T arr[], int n)
             // n = 10000时 Selection Sort:0.09s ;Insertion Sort:0.242s
         }
     }
-     */
+}
 
+
+template<typename T>
+void InsertionSort_Advance(T arr[], int n)
+{
+    // 写法3
     // 对插入排序进行改进，减少swap的操作
     for (int i = 0; i < n; i++) {
         T element = arr[i];

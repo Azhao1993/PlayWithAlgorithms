@@ -20,10 +20,13 @@ int main()
     n = 10000;
     int* f1 = SortTestHelper::GenerateRandomArray(n, 0, n);
     int* f2 = SortTestHelper::CopyIntArray(f1, n);
-    SortTestHelper::TestSort("Selection Sort", SelectionSort, f1, n);
-    SortTestHelper::TestSort("Insertion Sort", InsertionSort, f2, n);
+    int* f3 = SortTestHelper::CopyIntArray(f1, n);
+    SortTestHelper::TestSort("Selection Sort", SelectionSort, f1, n); // 0.091
+    SortTestHelper::TestSort("Insertion Sort", InsertionSort, f2, n); // 0.247
+    SortTestHelper::TestSort("Insertion Sort Advance", InsertionSort_Advance, f3, n); //0.047
     delete[] f1;
     delete[] f2;
+    delete[] f3;
 
     return 0;
 }

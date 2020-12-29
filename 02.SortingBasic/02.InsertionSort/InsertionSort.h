@@ -7,7 +7,7 @@
 #include <vector>
 
 
-
+// 近乎有序的情况下，插入排序的效率很好
 template<typename T>
 void InsertionSort(T arr[], int n) {
     /*

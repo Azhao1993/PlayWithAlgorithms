@@ -48,4 +48,18 @@ void InsertionSort_Advance(T arr[], int n)
         arr[j] = element;
     }
 }
+
+template<typename T>
+void InsertionSort(T arr[], int left, int right)
+{
+    // i 从 left + 1 开始
+    for (int i = left + 1; i <= right; i++) {
+        int j;
+        T element = arr[i];
+        for (j = i ; j > left && arr[j - 1] > element; j--) {
+            arr[j] = arr[j - 1];
+        }
+        arr[j] = element;
+    }
+}
 #endif //PLAYWITHALGORITHMS_INSERTIONSORT_H

@@ -1,5 +1,5 @@
 //
-// Created by wb.shixindong on 2020/12/28.
+// Created by wb.zhangzhao on 2020/12/28.
 //
 
 #ifndef PLAYWITHALGORITHMS_INSERTIONSORT_H
@@ -44,6 +44,20 @@ void InsertionSort_Advance(T arr[], int n)
         int j; // j保存element应该插入的位置
         for (j = i; j > 0 && arr[j - 1] > element; j--) {
             arr[j] = arr[j - 1]; // 改进后，n = 10000 Selection Sort:0.091s Insertion Sort:0.048s
+        }
+        arr[j] = element;
+    }
+}
+
+template<typename T>
+void InsertionSort(T arr[], int left, int right)
+{
+    // i 从 left + 1 开始
+    for (int i = left + 1; i <= right; i++) {
+        int j;
+        T element = arr[i];
+        for (j = i ; j > left && arr[j - 1] > element; j--) {
+            arr[j] = arr[j - 1];
         }
         arr[j] = element;
     }
